@@ -1,0 +1,14 @@
+@model IEnumerable<ComplaintSuggestionViewModel>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@foreach (var complaintSuggestion in Model)
+{
+    @Html.Partial("_ComplaintSuggestion", complaintSuggestion);
+}
+
+<div style="margin-left:10px;margin-bottom:10px;">
+    <a asp-action="Create" class="btn btn-success">Create</a>
+</div>
