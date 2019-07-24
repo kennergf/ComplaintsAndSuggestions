@@ -1,10 +1,13 @@
 @model ComplaintSuggestionViewModel
 
 <section class="panel panel-primary">
-    <div class="panel-heading">@Model.Title</div>
+    <div class="panel-heading">@Model.Subject</div>
     <div class="panel-body">
         <div>
-            <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-default">Details</a>
+            <label>@Model.Resume</label>
         </div>
+        <!-- <div>
+            <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-default">Details</a>
+        </div> -->
     </div>
 </section>
