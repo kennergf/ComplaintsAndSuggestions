@@ -7,6 +7,10 @@
 <h2>Create</h2>
 <form asp-action="Create" method="post">
     <div asp-validation-summary="All"></div>
+    <div class="form-label-group">
+        <input type="text" id="inputName" class="form-control" placeholder="Name">
+        <label for="inputName">Name</label>
+    </div>
     <table>
         <tr>
             <td><label asp-for="Name"></label></td>
