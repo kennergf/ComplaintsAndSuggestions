@@ -44,7 +44,7 @@ namespace ComplaintsAndSuggestions.Controllers
                 _complaintsSuggestions.Add(complaintSuggestion);
                 _complaintsSuggestions.Commit();
 
-                return RedirectToAction("Index", "ComplaintSuggestionController");
+                return RedirectToAction("Index", "ComplaintSuggestion");
             }
             else
             {
