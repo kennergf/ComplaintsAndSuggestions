@@ -4,35 +4,29 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-<form asp-action="Create" method="post">
-    <div asp-validation-summary="All"></div>
-    <div class="form-label-group">
-        <input type="text" id="inputName" class="form-control" placeholder="Name">
-        <label for="inputName">Name</label>
-    </div>
-    <table>
-        <tr>
-            <td><label asp-for="Name"></label></td>
-            <td><input asp-for="Name"></td>
-            <td><span asp-validation-for="Name"></span></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Email"></label></td>
-            <td><input asp-for="Email"></td>
-            <td><span asp-validation-for="Email"></span></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Subject"></label></td>
-            <td><input asp-for="Subject"></td>
-            <td><span asp-validation-for="Subject"></span></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Description"></label></td>
-            <td><input asp-for="Description"></td>
-            <td><span asp-validation-for="Description"></span></td>
-        </tr>
-    </table>
+<form asp-action="Create" class="form-create" method="post">
+    <h2>Create</h2>
 
-    <input type="submit" value="Create" class="btn btn-success">
+    <div class="form-label-group">
+        <input type="text" asp-for="Name" class="form-control" placeholder="Name">
+        <label for="Name">Name</label>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-label-group">
+        <input type="text" asp-for="Email" class="form-control" placeholder="Email">
+        <label for="Email">Email</label>
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-label-group">
+        <input type="text" asp-for="Subject" class="form-control" placeholder="Subject">
+        <label for="Subject">Subject</label>
+        <span asp-validation-for="Subject"></span>
+    </div>
+    <div class="form-label-group">
+        <input type="text" asp-for="Description" class="form-control" placeholder="Description">
+        <label for="Description">Description</label>
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <input type="submit" value="Create" class="btn btn-lg btn-primary btn-block">
 </form>

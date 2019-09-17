@@ -4,11 +4,13 @@
     ViewBag.Title = "Home";
 }
 
-@foreach (var complaintSuggestion in Model)
-{
-    @Html.Partial("_ComplaintSuggestion", complaintSuggestion);
-}
-
-<div style="margin-left:10px;margin-bottom:10px;">
-    <a asp-action="Create" class="btn btn-success">Create</a>
+<div class="form-create">
+    <h2>Recents</h2>
+    <div class="bg-white rounded shadow-sm my-3">
+    @foreach (var complaintSuggestion in Model)
+    {
+        @Html.Partial("_ComplaintSuggestion", complaintSuggestion);
+    }
+    </div>
+    <a asp-action="Create" class="btn btn-lg btn-primary btn-block">Create</a>
 </div>
