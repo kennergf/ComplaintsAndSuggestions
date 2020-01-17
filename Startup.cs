@@ -32,7 +32,17 @@ namespace ComplaintsAndSuggestions
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var conn = Configuration.GetConnectionString("DefaultConnection");
+            var conn = string.Empty;
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            {
+                conn = Configuration.GetConnectionString("MyDbConnection");
+            }
+            else
+            {
+                conn = Configuration.GetConnectionString("DefaultConnection");
+            }
+            
             services.AddDbContext<ComplaintSuggestionDbContext>(options =>
                 options.UseSqlServer(conn));
             
